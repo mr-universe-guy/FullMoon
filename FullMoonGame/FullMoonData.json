@@ -1,5 +1,5 @@
 {
-	"locations":{
+	"scenes":{
 		"CargoBayCh1-1": {
 			"description": "This is the cargo bay",
 			"actions": {
