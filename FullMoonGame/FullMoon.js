@@ -1,7 +1,7 @@
 // Scenes should be loaded into memory
-async function loadScenes() {
+async function loadScenes(actData) {
 	//ask server for Scenes file
-	const response = await fetch('FullMoonData.json');
+	const response = await fetch(actData);
 	const data = await response.json();
 	return data.scenes;
 }
@@ -41,7 +41,7 @@ function parseUserInput(){
 }
 
 async function init() {
-	const loadedScenes = await loadScenes();
+	const loadedScenes = await loadScenes('resources/Act1Data.json');
 	Object.assign(scenes, loadedScenes);
 	setScene(currentSceneId);
 }
