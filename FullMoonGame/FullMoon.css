@@ -1,0 +1,43 @@
+h1{
+	color: magenta;
+}
+
+hr{
+	margin: 5px 0px 5px;
+	border: 5px solid orange;
+}
+
+.game-panel{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 5px ridge red;
+	background-color: darkgray;
+	height: 600px;
+	width: 600px;
+}
+
+.content-panel{
+	display: flex;
+	flex: 1;
+	background-color: gray;
+}
+
+.text-panel{
+	width: 66%;
+	background-color: green;
+	border: 5px outset darkgreen;
+}
+
+.map-info-panel{
+	display: flex;
+	flex-direction: column;
+	background-color: yellow;
+	flex-grow: 1;
+	border: 5px outset orange;
+}
+
+.input-panel{
+	display: flex;
+	height: 50px;
+}
