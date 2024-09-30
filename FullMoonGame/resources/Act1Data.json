@@ -1,7 +1,7 @@
 {
 	"scenes":{
 		"CargoBayCh1-1": {
-			"description": "This is the cargo bay",
+			"description": "This is the <b>cargo bay</b>",
 			"actions": {
 				"look": {"type": "description", "value": "You look around the cargo bay. It is very boring."},
 				"wait": {"type": "changeLocation", "value": "CargoBayCh1-2"}

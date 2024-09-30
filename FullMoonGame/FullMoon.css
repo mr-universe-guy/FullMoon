@@ -1,18 +1,41 @@
-h1{
-	color: magenta;
+:root{
+	--pumpkin: #c65a07;
+	--glow: #c6ba07;
+	--blood: #8e0811;
+	--charcoal: #110b09;
+	--ghost: #efdcda;
+}
+
+body{
+	background-color: black;
 }
 
 hr{
 	margin: 5px 0px 5px;
-	border: 5px solid orange;
+	border: 5px solid var(--glow);
+}
+
+b{
+	color: var(--blood);
+}
+
+input[type=text] {
+    background-color: var(--charcoal);
+    caret-color: var(--glow);
+	color: var(--ghost);
+}
+
+input[type=button] {
+	background-color: var(--blood)
 }
 
 .game-panel{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	border: 5px ridge red;
-	background-color: darkgray;
+	border: 5px ridge var(--pumpkin);
+	background-color: var(--charcoal);
+	color: var(--ghost);
 	height: 600px;
 	width: 600px;
 }
@@ -20,21 +43,19 @@ hr{
 .content-panel{
 	display: flex;
 	flex: 1;
-	background-color: gray;
+	background-color: var(--charcoal);
 }
 
 .text-panel{
 	width: 66%;
-	background-color: green;
-	border: 5px outset darkgreen;
+	border: 5px outset var(--blood);
 }
 
 .map-info-panel{
 	display: flex;
 	flex-direction: column;
-	background-color: yellow;
 	flex-grow: 1;
-	border: 5px outset orange;
+	border: 5px outset var(--glow);
 }
 
 .input-panel{

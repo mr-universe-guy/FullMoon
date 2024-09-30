@@ -8,10 +8,11 @@ async function loadScenes(actData) {
 
 const scenes = {};
 let currentSceneId = "CargoBayCh1-1"; //This is the starting scenes
+let lycanthropy = 0.0; //Track how far along the transformation is
 
 //TODO: Have text be an array that breaks into lines. Also have it typed out for funsies
 function setText(text) {
-	document.getElementById("TextDisplayArea").innerText = text;
+	document.getElementById("TextDisplayArea").innerHTML = text;
 }
 
 // Attempt to set the current scenes from a given scenesId
@@ -22,13 +23,13 @@ function setScene(sceneId) {
 		setText(scene.description);
 		//set each available action
 		let actionArea = document.getElementById("AvailableActionsArea");
-		actionArea.innerText = ""
+		actionArea.innerHTML = "<ul>"
 		console.log(scene.actions);
 		for(let x in scene.actions){
 			let action = scene.actions[x];
-			actionArea.innerHTML += x + "<br>"
+			actionArea.innerHTML +="<li>"+ x + "</li>"
 		}
-		actionArea.innerHTML += "return"
+		actionArea.innerHTML += "<li>return</li></ul>"
 	} else{
 		setText("Scenes not found. "+sceneId);
 	}
@@ -52,20 +53,19 @@ function runAction(type, value){
 function parseUserInput(){
 	const inputField = document.getElementById("UserInput");
 	const input = inputField.value.trim();
+	inputField.value = "";
 	//there are a few inputs that are always available, handle them here
 	switch(input){
 		case "return":
 			setScene(currentSceneId);
-			inputField.value = "";
 			return;
 	}
 	//if it is not a default input then handle it as an action
 	const action = scenes[currentSceneId].actions[input]
 	if(action){
 		runAction(action.type, action.value)
-		inputField.value = "";
 	} else{
-		throw "No such action found: "+input
+		
 	}
 }
 
