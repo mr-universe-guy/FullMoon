@@ -21,8 +21,8 @@
 		</div>
 	</div>
 	<div id="InputArea" class="input-panel">
-		<input id="UserInput" type="text" style="flex-grow: 1;">
-		<input type="button" value="Submit">
+		<input id="UserInput" type="text" onkeypress="detectEnter(event)" style="flex-grow: 1;">
+		<input type="button" onClick="parseUserInput()" value="Submit">
 	</div>
 </div>
 <script src="FullMoon.js"></script>
