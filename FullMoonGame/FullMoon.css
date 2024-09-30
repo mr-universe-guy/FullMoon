@@ -36,8 +36,9 @@ input[type=button] {
 	border: 5px ridge var(--pumpkin);
 	background-color: var(--charcoal);
 	color: var(--ghost);
-	height: 600px;
-	width: 600px;
+	min-height: 300px;
+	min-width: 200px;
+	margin: 25px;
 }
 
 .content-panel{
