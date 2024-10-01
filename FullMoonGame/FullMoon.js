@@ -9,7 +9,8 @@ async function loadScenes(actData) {
 const scenes = {};
 let currentSceneId = "Ch1-1-CargoBay-01"; //This is the starting scenes
 const inventory = [];
-let lycanthropy = 0.0; //Track how far along the transformation is
+const playerStats = {};
+playerStats.lycanthropy = 0;
 
 function clearDisplayedText(){
 	document.getElementById("TextDisplayArea").innerHTML = ""
@@ -62,6 +63,23 @@ function runAction(type, value){
 	}
 }
 
+function applyStats(stats){
+	for(let x in stats){
+		const stat = stats[x];
+		if(playerStats[x]){
+			playerStats[x] += stat;
+		} else{
+			playerStats[x] = stat;
+		}
+		if(stat >= 0){
+			displayText("<span class='stat'>"+x+"</span> has increased.")
+		} else{
+			displayText("<span class='stat'>"+x+"</span> has decreased")
+		}
+		
+	}
+}
+
 //read the user input in the text field and attempt to run the action if possible
 function parseUserInput(){
 	const inputField = document.getElementById("UserInput");
@@ -81,6 +99,11 @@ function parseUserInput(){
 		runAction(action.type, action.value)
 	} else{
 		
+	}
+	//handle status changes
+	const stats = action.stats;
+	if(stats){
+		applyStats(stats);
 	}
 }
 
