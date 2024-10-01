@@ -7,7 +7,7 @@ async function loadScenes(actData) {
 }
 
 const scenes = {};
-let currentSceneId = "Ch0-CargoBay"; //This is the starting scenes
+let currentSceneId = "Ch1-1-CargoBay-01"; //This is the starting scenes
 const inventory = [];
 let lycanthropy = 0.0; //Track how far along the transformation is
 
@@ -54,7 +54,7 @@ function runAction(type, value){
 		case "description":
 			displayText(value);
 			break;
-		case "changeLocation":
+		case "changeScene":
 			setScene(value);
 			break;
 		default:
